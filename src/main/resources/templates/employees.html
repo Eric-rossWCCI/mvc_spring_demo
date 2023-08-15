@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Employees</h1>
+    <table>
+      <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+      </tr>
+      <tr th:each="employee: ${employees}">
+        <td th:text="${employee.id}" />
+        <td th:text="${employee.name}" />
+      </tr>
+    </table>
+  </body>
+</html>
